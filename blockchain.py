@@ -80,13 +80,13 @@ class Blockchain(object):
 		"""
 
 		proof = 0
-		while self.valid_proof(last_proof, proof) is False
-		proof += 1
+		while self.valid_proof(last_proof, proof) is False:
+			proof += 1
 
 		return proof
 
 	@staticmethod
-	def valid_proof(last_proof, proof)
+	def valid_proof(last_proof, proof):
 		"""
 		Validates the Proof: Does hash(last_proof, proof) contain 4 leading zeroes?
 

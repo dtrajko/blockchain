@@ -2,7 +2,7 @@ from blockchain import Blockchain
 
 bc = Blockchain()
 
-bi_1 = bc.new_transaction('Dejan', 'Marija', 12)
+bi_1 = bc.new_transaction('Sender 1', 'Recipient 1', 12)
 print("Current Transactions:", bc.current_transactions)
 print("Block index:", bi_1)
 print("Blockchain:", bc.chain)
@@ -18,7 +18,7 @@ print("Blockchain:", bc.chain)
 
 # input()
 
-bi_2 = bc.new_transaction('Marija', 'Veljko', 6)
+bi_2 = bc.new_transaction('Sender 2', 'Recipient 2', 6)
 print("Current Transactions:", bc.current_transactions)
 print("Block index:", bi_2)
 print("Blockchain:", bc.chain)
@@ -34,7 +34,7 @@ print("Blockchain:", bc.chain)
 
 # input()
 
-bi_3 = bc.new_transaction('Veljko', 'Dejan', 36)
+bi_3 = bc.new_transaction('Sender 3', 'Recipient 3', 36)
 print("Current Transactions:", bc.current_transactions)
 print("Block index:", bi_3)
 print("Blockchain:", bc.chain)

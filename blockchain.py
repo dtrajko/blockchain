@@ -11,7 +11,7 @@ class Blockchain(object):
 		self.chain = []
 
 		# Create the genesis block
-		self.new_block(previous_hash = 1, proof = 100)
+		self.new_block(proof = 100, previous_hash = 1)
 
 	def new_block(self, proof, previous_hash = None):
 		"""
@@ -79,7 +79,7 @@ class Blockchain(object):
 		:return: <int>
 		"""
 
-		proof = 0
+		proof = last_proof
 		while self.valid_proof(last_proof, proof) is False:
 			proof += 1
 
@@ -96,4 +96,13 @@ class Blockchain(object):
 
 		guess = f'{last_proof}{proof}'.encode()
 		guess_hash = hashlib.sha256(guess).hexdigest()
-		return guess_hash[:4] == "0000"
+
+		if (guess_hash[:4] == "0000"):
+			vp = True
+		else:
+			vp = False
+
+		if (vp):
+			print('valid_proof guess_hash: ' + guess_hash)
+
+		return vp
